@@ -2,7 +2,7 @@ package ticket.booking;
 
 import ticket.booking.entities.Train;
 import ticket.booking.entities.User;
-import ticket.booking.service.UserBookingService;
+import ticket.booking.services.UserBookingService;
 import ticket.booking.util.UserServiceUtil;
 
 import java.io.IOException;
