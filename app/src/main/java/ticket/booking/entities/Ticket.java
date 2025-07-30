@@ -2,6 +2,8 @@
 
 package ticket.booking.entities;
 
+import java.sql.Date;
+
 public class Ticket {
 
   private String ticketId;
@@ -14,5 +16,5 @@ public class Ticket {
 
   private Date dateOfTravel;
 
-  Private Train train;
+  private Train train;
 }

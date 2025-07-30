@@ -4,10 +4,21 @@
 
 package ticket.booking;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
+
 public class App {
     
 
     public static void main(String[] args) {
+        abc();
+        
+
+    }
+    
+    public static void abc() {
         
     }
 }

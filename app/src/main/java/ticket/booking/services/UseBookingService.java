@@ -3,6 +3,7 @@ package ticket.booking.services;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -19,11 +20,17 @@ public class UseBookingService {
 
   private static final String USERS_PATH = "../localDB/user.json";
 
-  public UseBookingService(User user) throws IOException{
+  public UseBookingService(User user) throws IOException {
     this.user = user;
     File users = new File(USERS_PATH);
     userList = objectMapper.readValue(users, new TypeReference<List<User>>() {
     });
+  }
+  
+  public Boolean loginUser() {
+    Optional<User> foundUser = userList.stream().filter(user1 ->{
+      return user1.getName().equals(user.getName()) && UserServiceUtil.checkPassword(user.getPassword(), user1}).findFirst();
+    return foundUser.isPresent();
   }
   
 
